@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Bank Gamer - Mantenha-se Carregado, Mantenha-se no Jogo!</title>
+    <title>Teclado Gamer Ultramax H68 - Sua Melhor Compra Hoje!</title>
+    <meta name="description" content="Teclado mecânico Ultramax H68 com 68 teclas, RGB dinâmico e switches vermelhos. Perfeito para jogos e escritório. Garanta seu teclado gamer barato e de alta performance.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -41,15 +42,6 @@
             50% { transform: scale(1.05); }
         }
         
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
         .slide-in {
             animation: slideIn 0.8s ease-out;
         }
@@ -74,6 +66,7 @@
         
         .image-gallery img {
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .image-gallery img:hover {
@@ -87,6 +80,45 @@
         .neon-text {
             text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 15px #00ffff, 0 0 20px #00ffff, 0 0 25px #00ffff;
         }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
@@ -94,8 +126,8 @@
         <div class="container mx-auto px-4 py-3 md:py-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-2">
-                    <i class="fas fa-bolt text-2xl text-cyan-400"></i>
-                    <span class="text-lg md:text-xl font-bold text-white neon-text">Power Bank Gamer</span>
+                    <i class="fas fa-keyboard text-2xl text-cyan-400"></i>
+                    <span class="text-lg md:text-xl font-bold text-white neon-text">Teclado Ultramax H68</span>
                 </div>
                 <a href="https://s.shopee.com.br/8fHtSD59Qw" target="_blank" rel="noopener noreferrer" class="cta-gradient text-white px-4 py-2 rounded-full font-semibold text-sm md:text-base">
                     Comprar Agora
@@ -109,15 +141,15 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="slide-in">
                     <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Energia Infinita para as Suas <span class="text-cyan-400 neon-text">Batalhas</span>
+                        Teclado gamer único — <span class="neon-text">com certeza vai ser sua melhor compra hoje!</span>
                     </h1>
                     <p class="text-xl mb-8 text-gray-300">
-                        Não perca mais nenhuma partida por falta de bateria. O Power Bank Gamer oferece carregamento ultrarrápido, design futurista e iluminação RGB para a sua vitória.
+                        O atraso de resposta e a falta de conforto atrapalham seu desempenho. O Teclado Mecânico Ultramax H68 é a solução definitiva para dominar qualquer jogo ou tarefa de escritório.
                     </p>
                     
                     <div class="mb-8">
                         <div class="flex items-center space-x-4">
-                            <span class="text-3xl font-bold text-yellow-400">R$ 129,90 </span>
+                            <span class="text-3xl font-bold text-yellow-400 neon-text">R$ 129,90</span>
                             <span class="text-lg line-through text-gray-400">R$ 179,90</span>
                             <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">30% OFF</span>
                         </div>
@@ -126,9 +158,9 @@
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="https://s.shopee.com.br/8fHtSD59Qw" target="_blank" rel="noopener noreferrer" class="cta-gradient text-white px-8 py-4 rounded-full font-bold text-lg text-center pulse-animation">
                             <i class="fas fa-shopping-cart mr-2"></i>
-                            Comprar Agora
+                            Quero esse teclado agora!
                         </a>
-                        <button onclick="scrollToVideo()" class="bg-transparent border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all">
+                        <button onclick="scrollToVideo('video-section-1')" class="bg-transparent border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all">
                             <i class="fas fa-play mr-2"></i>
                             Ver Demonstração
                         </button>
@@ -137,11 +169,11 @@
                     <div class="flex items-center space-x-6 mt-8 text-sm text-gray-300">
                         <div class="flex items-center">
                             <i class="fas fa-shipping-fast text-cyan-400 mr-2"></i>
-                            <span>Frete Grátis</span>
+                            <span>Entrega Rápida</span>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-shield-alt text-cyan-400 mr-2"></i>
-                            <span>Sua vitória garantida!</span>
+                            <span>Sua melhor jogada hoje!</span>
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-star text-cyan-400 mr-2"></i>
@@ -150,10 +182,16 @@
                     </div>
                 </div>
                 
-                <div class="floating">
-                    <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmbazbekcn5d9.webp" 
-                            alt="Power Bank Gamer" 
-                            class="w-full max-w-lg mx-auto rounded-2xl shadow-2xl">
+                <div class="w-full max-w-lg mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="relative w-full" style="padding-top: 56.25%;">
+                           <iframe class="absolute top-0 left-0 w-full h-full"
+                                src="https://www.youtube.com/embed/VdLUDRJcc8k"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen
+                                referrerpolicy="strict-origin-when-cross-origin">
+                           </iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,58 +212,60 @@
     <section class="py-20 bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white neon-text mb-4">Poder que Transforma o Jogo</h2>
-                <p class="text-xl text-gray-400">Tecnologia de ponta para a sua melhor performance</p>
+                <h2 class="text-4xl font-bold text-white neon-text mb-4">Diferenciais que Elevam seu Jogo</h2>
+                <p class="text-xl text-gray-400">Performance e estilo para dominar o campo de batalha</p>
+                <p class="text-lg text-gray-500 mt-2">
+                    <small>teclado mecânico promocional, teclado RGB para jogos, acessório gamer com desconto</small>
+                </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="feature-card p-8 rounded-2xl text-center text-white">
                     <div class="bg-cyan-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-charging-station text-white text-2xl"></i>
+                        <i class="fas fa-microchip text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 neon-text">Carregamento Turbo</h3>
-                    <p class="text-gray-300">Nunca mais fique sem bateria no meio da partida. Recarregue seus dispositivos em tempo recorde.</p>
+                    <h3 class="text-xl font-bold text-white mb-2 neon-text">Switches Mecânicos</h3>
+                    <p class="text-gray-300">Resposta tátil e sonora precisa para cada comando, ideal para gamers e digitadores exigentes.</p>
                 </div>
                 
                 <div class="feature-card p-8 rounded-2xl text-center text-white">
                     <div class="bg-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-bolt text-white text-2xl"></i>
+                        <i class="fas fa-lightbulb text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 neon-text">Alta Capacidade</h3>
-                    <p class="text-gray-300">Com 10000mAh, ele carrega seu celular 2-3 vezes. Energia de sobra para longas sessões de jogo.</p>
+                    <h3 class="text-xl font-bold text-white mb-2 neon-text">Iluminação RGB Dinâmica</h3>
+                    <p class="text-gray-300">Personalize seu setup com os efeitos de luzes dinâmicas, criando o ambiente ideal para suas partidas.</p>
                 </div>
                 
                 <div class="feature-card p-8 rounded-2xl text-center text-white">
                     <div class="bg-fuchsia-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-palette text-white text-2xl"></i>
+                        <i class="fas fa-compact-disc text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 neon-text">Iluminação Neon RGB</h3>
-                    <p class="text-gray-300">Design futurista com LEDs RGB que pulsam no ritmo do seu jogo. Estilo e performance em um só produto.</p>
+                    <h3 class="text-xl font-bold text-white mb-2 neon-text">Layout Compacto (68)</h3>
+                    <p class="text-gray-300">Otimiza o espaço na sua mesa e oferece mais liberdade para movimentos do mouse.</p>
                 </div>
                 
                 <div class="feature-card p-8 rounded-2xl text-center text-white">
                     <div class="bg-teal-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-cube text-white text-2xl"></i>
+                        <i class="fas fa-hammer text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-2 neon-text">Compacto e Resistente</h3>
-                    <p class="text-gray-300">Leve-o para qualquer lugar. Construção robusta e design compacto para caber no seu bolso ou mochila.</p>
+                    <h3 class="text-xl font-bold text-white mb-2 neon-text">Durabilidade e Conforto</h3>
+                    <p class="text-gray-300">Construção robusta e teclas com sistema de injeção dupla que não desbotam com o tempo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="video-section" class="py-20 bg-gray-900 text-white">
+    <section id="video-section-1" class="py-20 bg-gray-900 text-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 neon-text">Veja o Poder em Ação</h2>
-                <p class="text-xl text-gray-400">Descubra como o Power Bank Gamer pode elevar seu setup</p>
+                <h2 class="text-4xl font-bold mb-4 neon-text">Mergulhe no Universo RGB</h2>
+                <p class="text-xl text-gray-400">Assista e descubra a beleza e a funcionalidade deste teclado</p>
             </div>
             
             <div class="max-w-md mx-auto">
                 <div class="relative bg-black rounded-2xl overflow-hidden shadow-2xl" style="aspect-ratio: 9/16;">
-                    <iframe 
-                    src="https://www.youtube.com/shorts/VdLUDRJcc8k" 
-                        class="w-full h-full"
+                    <iframe class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/VdLUDRJcc8k"
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         allowfullscreen
@@ -236,7 +276,7 @@
             
             <div class="text-center mt-8">
                 <a href="https://s.shopee.com.br/8fHtSD59Qw" target="_blank" rel="noopener noreferrer" class="cta-gradient text-white px-8 py-4 rounded-full font-bold text-lg">
-                    Quero o Meu Agora!
+                    Quero esse teclado agora!
                 </a>
             </div>
         </div>
@@ -246,41 +286,44 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-white mb-4 neon-text">Galeria de Detalhes</h2>
-                <p class="text-xl text-gray-400">Cada ângulo do seu novo companheiro de jogo</p>
+                <p class="text-xl text-gray-400">Cada ângulo do seu novo teclado mecânico</p>
+                <p class="text-lg text-gray-500 mt-2">
+                    <small>teclado gamer barato, teclado RGB</small>
+                </p>
             </div>
             
             <div class="image-gallery grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmbazbekcn5d9.webp" 
-                    alt="Power Bank Gamer - Vista 1" 
-                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400">
+                    alt="Teclado Gamer - Vista 1" 
+                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400" onclick="openLightbox(this)">
                 
-                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmbazbelr7l2d.webp" 
-                    alt="Power Bank Gamer - Vista 2" 
-                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400">
+                <img src="https://down-br.img.susercontent.com/file/sg-11134201-22100-i0v62g60f5hva7.webp" 
+                    alt="Teclado Gamer - Vista 2" 
+                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400" onclick="openLightbox(this)">
                 
-                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmdgx8k0coi6c.webp" 
-                    alt="Power Bank Gamer - Vista 3" 
-                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400">
+                <img src="https://down-br.img.susercontent.com/file/sg-11134201-22100-q0g24z36m5hv12.webp" 
+                    alt="Teclado Gamer - Vista 3" 
+                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400" onclick="openLightbox(this)">
                 
-                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmdgx8kczsi09.webp" 
-                    alt="Power Bank Gamer - Vista 4" 
-                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400">
+                <img src="https://down-br.img.susercontent.com/file/sg-11134201-22100-1c09893g93hv64.webp" 
+                    alt="Teclado Gamer - Vista 4" 
+                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400" onclick="openLightbox(this)">
                 
-                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmdgx8k1r8ye2.webp" 
-                    alt="Power Bank Gamer - Vista 5" 
-                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400">
+                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-luis9u10j7g790.webp" 
+                    alt="Teclado Gamer - Vista 5" 
+                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400" onclick="openLightbox(this)">
                 
-                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmdgx8k7diq32.webp" 
-                    alt="Power Bank Gamer - Vista 6" 
-                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400">
+                <img src="https://down-br.img.susercontent.com/file/sg-11134201-22100-10901e1n53hv73.webp" 
+                    alt="Teclado Gamer - Vista 6" 
+                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400" onclick="openLightbox(this)">
                 
-                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmdgx8k4kdud3.webp" 
-                    alt="Power Bank Gamer - Vista 7" 
-                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400">
+                <img src="https://down-br.img.susercontent.com/file/sg-11134201-22100-c09p56x3v5hv95.webp" 
+                    alt="Teclado Gamer - Vista 7" 
+                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400" onclick="openLightbox(this)">
 
-                <img src="https://down-br.img.susercontent.com/file/br-11134207-7r98o-mcmdgx8k35te89.webp" 
-                    alt="Power Bank Gamer - Vista 8" 
-                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400">
+                <img src="https://down-br.img.susercontent.com/file/sg-11134201-22100-843d0473v5hv09.webp" 
+                    alt="Teclado Gamer - Vista 8" 
+                    class="w-full h-64 object-cover rounded-xl shadow-lg border-2 border-gray-700 hover:border-cyan-400" onclick="openLightbox(this)">
             </div>
         </div>
     </section>
@@ -289,7 +332,10 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-white mb-4 neon-text">Gamers de Verdade Recomendam</h2>
-                <p class="text-xl text-gray-400">Mais de 10.000 jogadores prontos para a batalha</p>
+                <p class="text-xl text-gray-400">Veja o que a comunidade está dizendo sobre o nosso teclado</p>
+                <p class="text-lg text-gray-500 mt-2">
+                    <small>teclado mecânico de 68 teclas, acessório gamer com desconto</small>
+                </p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -303,7 +349,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-4">"O design é insano e o carregamento é super rápido. Me salvou várias vezes em campeonatos. Essencial!"</p>
+                    <p class="text-gray-300 mb-4">"A resposta tátil é incrível, e o tamanho compacto liberou muito espaço na minha mesa. Agora posso jogar e trabalhar com o mesmo teclado de alta qualidade."</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
                             L
@@ -325,14 +371,14 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-4">"A iluminação RGB é um show à parte! Combina perfeitamente com meu setup. Fora a capacidade que é absurda."</p>
+                    <p class="text-gray-300 mb-4">"O design futurista e a iluminação RGB são espetaculares! A qualidade de construção é sólida, e o teclado é perfeito para meu setup minimalista."</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-fuchsia-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
                             A
                         </div>
                         <div>
                             <p class="font-semibold">Ana "Vortex" Oliveira</p>
-                            <p class="text-sm text-gray-400">Streamer</p>
+                            <p class="text-sm text-gray-400">Streamer e Designer</p>
                         </div>
                     </div>
                 </div>
@@ -347,7 +393,7 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-300 mb-4">"Produto de alta qualidade e super resistente. Perfeito para levar em eventos e ter certeza de que não fico na mão."</p>
+                    <p class="text-gray-300 mb-4">"Sempre quis um teclado mecânico, mas achava caro. Este modelo me surpreendeu pela qualidade e preço justo. A melhor compra de longe!"</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
                             C
@@ -365,56 +411,56 @@
     <section class="py-20 bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-white mb-4 neon-text">Respostas para as suas Dúvidas</h2>
-                <p class="text-xl text-gray-400">Saiba tudo sobre o Power Bank Gamer</p>
+                <h2 class="text-4xl font-bold text-white neon-text mb-4">Respostas para as suas Dúvidas</h2>
+                <p class="text-xl text-gray-400">Saiba tudo sobre o Teclado Ultramax H68</p>
             </div>
             
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="feature-card rounded-xl overflow-hidden text-white">
                     <button class="w-full text-left p-6 font-semibold text-white hover:bg-gray-700 transition-colors" onclick="toggleFaq(1)">
                         <div class="flex justify-between items-center">
-                            <span>Qual a capacidade real da bateria?</span>
+                            <span>O teclado é do tipo plug and play?</span>
                             <i class="fas fa-chevron-down transform transition-transform" id="icon-1"></i>
                         </div>
                     </button>
                     <div class="hidden p-6 pt-0 text-gray-300" id="faq-1">
-                        O Power Bank Gamer possui uma capacidade de 10000mAh, suficiente para carregar um smartphone de 2 a 3 vezes, dependendo do modelo.
+                        Sim, o Teclado Ultramax H68 é plug and play. Basta conectá-lo à porta USB do seu computador e começar a usar, sem a necessidade de instalar drivers.
                     </div>
                 </div>
                 
                 <div class="feature-card rounded-xl overflow-hidden text-white">
                     <button class="w-full text-left p-6 font-semibold text-white hover:bg-gray-700 transition-colors" onclick="toggleFaq(2)">
                         <div class="flex justify-between items-center">
-                            <span>Ele é compatível com todos os celulares?</span>
+                            <span>Qual a compatibilidade do teclado?</span>
                             <i class="fas fa-chevron-down transform transition-transform" id="icon-2"></i>
                         </div>
                     </button>
                     <div class="hidden p-6 pt-0 text-gray-300" id="faq-2">
-                        Sim, ele vem com múltiplas saídas (USB, USB-C) e é compatível com a maioria dos dispositivos do mercado, como smartphones, tablets e controles de videogame.
+                        O teclado é compatível com sistemas operacionais Windows XP, Vista, 7, 8 e 10.
                     </div>
                 </div>
                 
                 <div class="feature-card rounded-xl overflow-hidden text-white">
                     <button class="w-full text-left p-6 font-semibold text-white hover:bg-gray-700 transition-colors" onclick="toggleFaq(3)">
                         <div class="flex justify-between items-center">
-                            <span>A iluminação RGB consome muita bateria?</span>
+                            <span>A iluminação RGB é personalizável?</span>
                             <i class="fas fa-chevron-down transform transition-transform" id="icon-3"></i>
                         </div>
                     </button>
                     <div class="hidden p-6 pt-0 text-gray-300" id="faq-3">
-                        Não, a iluminação LED RGB é projetada para ser eficiente e consome uma quantidade mínima de energia, sem impactar significativamente a capacidade de carga.
+                        Sim, o teclado possui luz de fundo RGB Rainbow dinâmica com múltiplos modos de luz para você personalizar seu setup.
                     </div>
                 </div>
                 
                 <div class="feature-card rounded-xl overflow-hidden text-white">
                     <button class="w-full text-left p-6 font-semibold text-white hover:bg-gray-700 transition-colors" onclick="toggleFaq(4)">
                         <div class="flex justify-between items-center">
-                            <span>Tem garantia?</span>
+                            <span>As teclas desbotam com o tempo?</span>
                             <i class="fas fa-chevron-down transform transition-transform" id="icon-4"></i>
                         </div>
                     </button>
                     <div class="hidden p-6 pt-0 text-gray-300" id="faq-4">
-                        Sim! Oferecemos garantia de 1 mês contra defeitos de fabricação e suporte técnico completo.
+                        Não, as teclas são feitas com um sistema de injeção dupla, o que as torna resistentes ao desgaste e impede que as letras e símbolos desbotem.
                     </div>
                 </div>
             </div>
@@ -425,20 +471,20 @@
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-6 neon-text">Não Perca Esta Oportunidade!</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-200">
-                Apenas R$ 89,90 por tempo limitado. Garanta a energia que você precisa para dominar o jogo.
+                O estoque do **teclado gamer barato** com esse preço de lançamento está acabando. Garanta já o seu!
             </p>
             
             <div class="mb-8">
                 <div class="flex justify-center items-center space-x-4 mb-4">
                     <span class="text-4xl font-bold text-yellow-400">R$ 129,90</span>
-                    <span class="text-xl line-through text-gray-200">R$ 189,90</span>
+                    <span class="text-xl line-through text-gray-200">R$ 179,90</span>
                 </div>
                 
             </div>
             
             <a href="https://s.shopee.com.br/8fHtSD59Qw" target="_blank" rel="noopener noreferrer" class="cta-gradient text-white px-12 py-6 rounded-full font-bold text-xl pulse-animation inline-block">
                 <i class="fas fa-shopping-cart mr-3"></i>
-                COMPRAR AGORA - COM DESCONTO
+                Quero esse teclado agora!
             </a>
             
             <p class="text-sm mt-4 text-gray-300">
@@ -453,27 +499,27 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <i class="fas fa-bolt text-2xl text-cyan-400"></i>
-                        <span class="text-xl font-bold neon-text">Power Bank Gamer</span>
+                        <i class="fas fa-keyboard text-2xl text-cyan-400"></i>
+                        <span class="text-xl font-bold neon-text">Teclado Ultramax H68</span>
                     </div>
-                    <p class="text-gray-400">Sua energia para a vitória.</p>
+                    <p class="text-gray-400">Sua melhor jogada começa aqui.</p>
                 </div>
                 
                 <div>
                     <h4 class="font-semibold mb-4 text-white">Para Gamers</h4>
                     <ul class="space-y-2 text-gray-400">
                         <li>Longas Sessões de Jogo</li>
-                        <li>Transmissões ao Vivo</li>
-                        <li>Eventos eSports</li>
+                        <li>Precisão e Velocidade</li>
+                        <li>Setup Personalizado</li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="font-semibold mb-4 text-white">Recursos Principais</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li>Carregamento Turbo</li>
+                        <li>Switches Mecânicos</li>
                         <li>Iluminação RGB</li>
-                        <li>Design Futurista</li>
+                        <li>Design Compacto</li>
                     </ul>
                 </div>
                 
@@ -487,10 +533,15 @@
             </div>
             
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>© 2025 Power Bank Gamer. Todos os direitos reservados.</p>
+                <p>© 2025 Ultramax H68. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
+
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <script>
         // Countdown Timer
@@ -514,8 +565,8 @@
         updateCountdown();
         
         // Smooth scroll to video
-        function scrollToVideo() {
-            document.getElementById('video-section').scrollIntoView({
+        function scrollToVideo(id) {
+            document.getElementById(id).scrollIntoView({
                 behavior: 'smooth'
             });
         }
@@ -551,7 +602,26 @@
         document.querySelectorAll('.feature-card').forEach(card => {
             observer.observe(card);
         });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+
+        function openLightbox(element) {
+            lightbox.style.display = 'flex';
+            lightboxImg.src = element.src;
+        }
+
+        lightboxClose.onclick = function() {
+            lightbox.style.display = 'none';
+        }
+
+        lightbox.onclick = function(event) {
+            if (event.target !== lightboxImg && event.target !== lightboxClose) {
+                lightbox.style.display = 'none';
+            }
+        }
     </script>
 </body>
-
 </html>
